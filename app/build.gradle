@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.sampleappscreenrouter"
+//        applicationId "com.example.sampleappscreenrouter"
         minSdk 27
         targetSdk 31
         versionCode 1
