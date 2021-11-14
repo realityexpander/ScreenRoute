@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="SampleAppScreenRouter.app" target="11" />
+      <module name="SampleAppScreenRouter.ScreenRoute2" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "SampleAppScreenRouter"
 include ':app'
 include ':ScreenRoute'
+include ':ScreenRoute2'
