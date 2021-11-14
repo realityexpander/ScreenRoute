@@ -44,10 +44,12 @@ afterEvaluate {
     publishing {
         publications {
             library(MavenPublication) {
-                groupId = 'com.athanas.ScreenRoute2'
-//                artifactId = "$project.name" // BeginnerJetPackNavigation
-                artifactId = "ScreenRoute2" // seems to ignore this
+                groupId = 'com.athanas.screenroute2'
+//                groupId = 'com.github.realityexpander'
+                artifactId = "$project.name"
+//                artifactId = "ScreenRoute2"
                 version = '0.7.8'
+
             }
         }
     }
