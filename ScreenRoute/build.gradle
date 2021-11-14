@@ -16,7 +16,7 @@ afterEvaluate {
                 groupId = 'com.github.realityexpander'
 //                artifactId = "$project.name" // BeginnerJetPackNavigation
                 artifactId = "ScreenRoute" // seems to ignore this
-                version = '0.7.4'
+                version = '0.7.5'
             }
         }
     }
