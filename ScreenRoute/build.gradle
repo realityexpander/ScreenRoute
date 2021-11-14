@@ -13,11 +13,10 @@ afterEvaluate {
     publishing {
         publications {
             library(MavenPublication) {
-//                groupId = 'com.github.realityexpander'
-                groupId = 'com.athanas'
-                artifactId = "$project.name" // BeginnerJetPackNavigation
-//                artifactId = "screenroute" // seems to ignore this
-                version = '1.0'
+                groupId = 'com.github.realityexpander'
+//                artifactId = "$project.name" // BeginnerJetPackNavigation
+                artifactId = "ScreenRoute" // seems to ignore this
+                version = '0.7.3'
             }
         }
     }
