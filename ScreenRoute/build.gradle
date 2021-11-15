@@ -29,7 +29,7 @@ afterEvaluate {
                 // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
 //                artifactId = "$project.name" // // Names the artifact to be  ie: 'com.github.realityexpander.ScreenRoute:ScreenRoute:0.7.11'
                 artifactId = "ScreenRoute" // // match module name
-                version = '0.7.14'
+                version = '0.7.15'
 
 //                from(components["kotlin"]) // no worky
 //                from components.kotlin // no worky
