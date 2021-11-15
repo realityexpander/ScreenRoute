@@ -40,15 +40,20 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
+// Published at: https://jitpack.io/#realityexpander/ScreenRoute
+println("project.name= ${project.name}")
+
 afterEvaluate {
     publishing {
         publications {
             library(MavenPublication) {
                 // Just make these match the package and Module name
                 groupId = 'com.athanas.screenroute2'  // match package name, used internally only for maven-publish
-//                artifactId = "ScreenRoute2" // match Module name, used internally only for maven-publish
+
+                // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
+//                artifactId = "ScreenRoute2" // match Module maven-publish
                 artifactId = "$project.name"
-                version = '0.7.18'
+                version = '0.7.19'
 
                 from components.release
             }
