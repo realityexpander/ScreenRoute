@@ -53,7 +53,7 @@ afterEvaluate {
                 // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
 //                artifactId = "ScreenRoute2" // match Module maven-publish
                 artifactId = "$project.name"
-                version = '0.7.19'
+                version = '0.7.21'
 
                 from components.release
             }

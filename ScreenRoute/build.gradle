@@ -23,22 +23,20 @@ afterEvaluate {
     publishing {
         publications {
 //            library(MavenPublication) { // works with components.java
-            mavenKotlin(MavenPublication) {
-//            mavenJava(MavenPublication) {
-                // Names the groupId to be created ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
+//            mavenKotlin(MavenPublication) { // works with components.kotlin
+            mavenJava(MavenPublication) {
+                // Names the groupId to be created ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:{releaseId}'
                 // Note this groupId can be completely different than the PACKAGE used by the module, but to be consistent should be the SAME.
                 groupId = 'com.athanas.screenroute' // match package name for clarity
 
-                // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
-//                artifactId = "$project.name" // // Names the artifact to be  ie: 'com.github.realityexpander.ScreenRoute:ScreenRoute:0.7.11'
+                // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:{releaseId}'
+//                artifactId = "$project.name" // // Names the artifact to be  ie: 'com.github.realityexpander.ScreenRoute:ScreenRoute:{releaseId}'
 //                artifactId = "ScreenRoute" // // match module name for clarity
                 artifactId = project.name  // this will be "ScreenRoute"
-                version = '0.7.20'
+                version = '0.7.21'
 
-//                from(components["kotlin"]) // no worky
-//                from components.kotlin // no worky
-//                from components.java // works with library
-                from components.kotlin
+                from components.java // works with library
+//                from components.kotlin // works with mavenKotlin(MavenPublication)
             }
         }
     }
