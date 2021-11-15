@@ -15,7 +15,7 @@ java {
     withSourcesJar()
 }
 
-getLogger().log("hello $LogLevel.INFO, project.name")
+getLogger().log(LogLevel.INFO, "hello ${project.name}")
 
 afterEvaluate {
     publishing {
