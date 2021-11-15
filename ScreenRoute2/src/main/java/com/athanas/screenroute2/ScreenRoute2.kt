@@ -114,8 +114,8 @@ open class ScreenRoute2(val route: String) {
 
 // Test class
 sealed class ___ScreenTest2(route:String): ScreenRoute2(route) {
-    object MainScreen : ___ScreenTest("main_screen")
-    object DetailScreen : ___ScreenTest("detail_screen")
+    object MainScreen : ___ScreenTest2("main_screen")
+    object DetailScreen : ___ScreenTest2("detail_screen")
 }
 
 // Test ScreenRoute class (make sure VM has -ea turned on to see assertions)
