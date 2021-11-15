@@ -76,38 +76,40 @@ open class ScreenRoute(val route: String) {
         }
     }
 
-}
+    sealed class NavArg {
+        // for Required arguments
+        lateinit var arg: String
 
-sealed class NavArg {
-    // for Required arguments
-    lateinit var arg: String
+        // for Optional arguments
+        lateinit var key: String
+        lateinit var value: String
 
-    // for Optional arguments
-    lateinit var key: String
-    lateinit var value: String
+        operator fun component1(): String { // allows for destructuring (k,v) or (arg)
+            if (::key.isInitialized) return key
 
-    operator fun component1(): String { // allows for destructuring (k,v) or (arg)
-        if (::key.isInitialized) return key
+            return arg
+        }
+        operator fun component2(): String { // allows for destructuring
+            return value
+        }
 
-        return arg
-    }
-    operator fun component2(): String { // allows for destructuring
-        return value
-    }
+        class Required(arg: String): NavArg() {
+            init {
+                this.arg = arg
+            }
+        }
 
-    class Required(arg: String): NavArg() {
-        init {
-            this.arg = arg
+        class Optional(key: String = "", value: String): NavArg() {
+            init {
+                this.key = key
+                this.value = value
+            }
         }
     }
 
-    class Optional(key: String = "", value: String): NavArg() {
-        init {
-            this.key = key
-            this.value = value
-        }
-    }
 }
+
+
 
 // Test class
 sealed class ___ScreenTest(route:String): ScreenRoute(route) {
@@ -124,23 +126,23 @@ fun main(args: Array<String> =  arrayOf()) {
     assert(out == "main_screen/abc/123/xyz")
 
     out = ___ScreenTest.MainScreen.withRequiredArgs(
-        NavArg.Required("abc" ),
-        NavArg.Required("123" )
+        ScreenRoute.NavArg.Required("abc" ),
+        ScreenRoute.NavArg.Required("123" )
     )
     println("withRequiredArgs usingArgs=$out")
     assert(out == "main_screen/abc/123")
 
     out = ___ScreenTest.DetailScreen.withOptionalArgs(
-        NavArg.Optional("abc", "hey"),
-        NavArg.Optional("123", "xyz")
+        ScreenRoute.NavArg.Optional("abc", "hey"),
+        ScreenRoute.NavArg.Optional("123", "xyz")
     )
     println("withOptionalArgs=$out")
     assert(out == "detail_screen?abc=hey/123=xyz")
 
     out = ___ScreenTest.MainScreen.withArgs(
-        NavArg.Optional("userName", "abc"),
-        NavArg.Required("my Name"),
-        NavArg.Optional("screen", "xyz")
+        ScreenRoute.NavArg.Optional("userName", "abc"),
+        ScreenRoute.NavArg.Required("my Name"),
+        ScreenRoute.NavArg.Optional("screen", "xyz")
     )
     println("withMixedArgs=$out")
     assert(out == "main_screen?userName=abc/my Name/screen=xyz" )

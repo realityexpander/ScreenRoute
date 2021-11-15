@@ -13,12 +13,13 @@ afterEvaluate {
     publishing {
         publications {
             library(MavenPublication) {
-                groupId = 'com.athanas'
+                groupId = 'com.athanas.screenrouter'
 //                artifactId = "$project.name" // BeginnerJetPackNavigation
-                artifactId = "ScreenRoute" // seems to ignore this
+                artifactId = "ScreenRouter" // seems to ignore this
                 version = '0.7.5'
 
-                from(components["kotlin"])
+//                from(components["kotlin"]) // no worky
+                from components.release
             }
         }
     }

@@ -4,8 +4,9 @@ import java.net.URLDecoder
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
-// To run from command line: kotlin -cp ScreenRoute.jar com.athanas.screenroute.Main
+// This is an Android Module and can contain Android platform stuff
 
+// To run from command line: kotlin -cp ScreenRoute.jar com.athanas.screenroute.Main
 
 open class ScreenRoute2(val route: String) {
     // route format: screen_name/{arg1}/{arg2}/{arg3}
@@ -158,7 +159,7 @@ fun main(args: Array<String> =  arrayOf()) {
 class Main { // Must have a Main class to run from kotlin command line
     companion object {
         @JvmStatic fun main(args: Array<String>) {
-            println("Testing ScreenRoute library....")
+            println("Testing ScreenRoute2 library....")
             main()
         }
     }
