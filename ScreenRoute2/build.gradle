@@ -46,8 +46,9 @@ afterEvaluate {
             library(MavenPublication) {
                 // Just make these match the package and Module name
                 groupId = 'com.athanas.screenroute2'  // match package name, used internally only for maven-publish
-                artifactId = "ScreenRoute2" // match Module name, used internally only for maven-publish
-                version = '0.7.15'
+//                artifactId = "ScreenRoute2" // match Module name, used internally only for maven-publish
+                artifactId = "$project.name"
+                version = '0.7.18'
 
                 from components.release
             }
