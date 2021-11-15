@@ -15,16 +15,17 @@ afterEvaluate {
             library(MavenPublication) {
                 // Names the groupId to be created ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
                 // Note this groupId can be completely different than the package used by the module, but to be consistent should be the same.
-                groupId = 'com.athanas.screenroute1'
+                groupId = 'com.athanas.screenroute'
 
                 // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
 //                artifactId = "$project.name" // // Names the artifact to be  ie: 'com.github.realityexpander.ScreenRoute:ScreenRoute:0.7.11'
-                artifactId = "ScreenRoute1" // // 'com.github.realityexpander.ScreenRoute:ScreenRouter:0.7.11'
-                version = '0.7.12'
+                artifactId = "ScreenRoute" // // 'com.github.realityexpander.ScreenRoute:ScreenRouter:0.7.11'
+                version = '0.7.13'
 
 //                from(components["kotlin"]) // no worky
 //                from components.kotlin // no worky
-                from components.java
+//                from components.java
+                from components.kotlin
             }
         }
     }
