@@ -1,12 +1,17 @@
+// https://mrcurious.medium.com/publishing-your-android-kotlin-library-to-maven-central-in-2021-df263a4f2cbc
+
 plugins {
     id 'java-library'
     id 'org.jetbrains.kotlin.jvm'
     id 'maven-publish'
+    id 'kotlin'
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+    withJavadocJar()
+    withSourcesJar()
 }
 
 afterEvaluate {
@@ -24,8 +29,8 @@ afterEvaluate {
 
 //                from(components["kotlin"]) // no worky
 //                from components.kotlin // no worky
-//                from components.java
-                from components.kotlin
+                from components.java
+//                from components.kotlin
             }
         }
     }
