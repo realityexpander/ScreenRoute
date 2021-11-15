@@ -20,8 +20,9 @@ getLogger().log(LogLevel.INFO, "hello ${project.name}")
 afterEvaluate {
     publishing {
         publications {
-//            library(MavenPublication) {
-            mavenKotlin(MavenPublication) {
+            library(MavenPublication) {
+//            mavenKotlin(MavenPublication) {
+//            mavenJava(MavenPublication) {
                 // Names the groupId to be created ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
                 // Note this groupId can be completely different than the package used by the module, but to be consistent should be the same.
                 groupId = 'com.athanas.screenroute' // match package name
@@ -33,8 +34,8 @@ afterEvaluate {
 
 //                from(components["kotlin"]) // no worky
 //                from components.kotlin // no worky
-//                from components.java
-                from components.kotlin
+                from components.java
+//                from components.kotlin
             }
         }
     }
