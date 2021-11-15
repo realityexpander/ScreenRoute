@@ -38,7 +38,7 @@ afterEvaluate {
 //                artifactId = "$project.name" // // Names the artifact to be  ie: 'com.github.realityexpander.ScreenRoute:ScreenRoute:{releaseId from github}'
 //                artifactId = "ScreenRoute" // // match module name for clarity
                 artifactId = project.name  // this will be "ScreenRoute"
-                version = '0.7.22'
+                version = '0.7.22' // used internally inside maven
 
 //                from components.java // works with library
                 from components.kotlin // works with mavenKotlin(MavenPublication)

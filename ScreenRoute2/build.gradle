@@ -53,12 +53,13 @@ afterEvaluate {
         publications {
             library(MavenPublication) {
                 // Just make these match the package and Module name
+                // Note this groupId can be completely different than the PACKAGE used by the module, but to be consistent should be the SAME.
                 groupId = 'com.athanas.screenroute2'  // be sure to match package name for clarity, used internally only for maven-publish plugin
 
                 // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute2:{artifactId}:{releaseId from github}'
 //                artifactId = "ScreenRoute2" // match Module maven-publish
                 artifactId = "$project.name"
-                version = '0.7.22'
+                version = '0.7.22' // used internally inside maven
 
                 from components.release
             }
