@@ -1,4 +1,5 @@
 // https://mrcurious.medium.com/publishing-your-android-kotlin-library-to-maven-central-in-2021-df263a4f2cbc
+// https://docs.gradle.org/current/userguide/publishing_maven.html
 
 plugins {
     id 'java-library'
@@ -19,7 +20,8 @@ getLogger().log(LogLevel.INFO, project.name)
 afterEvaluate {
     publishing {
         publications {
-            library(MavenPublication) {
+//            library(MavenPublication) {
+            mavenJava(MavenPublication) {
                 // Names the groupId to be created ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
                 // Note this groupId can be completely different than the package used by the module, but to be consistent should be the same.
                 groupId = 'com.athanas.screenroute' // match package name
