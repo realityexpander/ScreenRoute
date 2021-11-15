@@ -22,22 +22,22 @@ println("project.name= ${project.name}")
 afterEvaluate {
     publishing {
         publications {
-            library(MavenPublication) {
-//            mavenKotlin(MavenPublication) {
+//            library(MavenPublication) { // works with components.java
+            mavenKotlin(MavenPublication) {
 //            mavenJava(MavenPublication) {
                 // Names the groupId to be created ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
-                // Note this groupId can be completely different than the package used by the module, but to be consistent should be the same.
+                // Note this groupId can be completely different than the PACKAGE used by the module, but to be consistent should be the SAME.
                 groupId = 'com.athanas.screenroute' // match package name for clarity
 
                 // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:0.7.11'
 //                artifactId = "$project.name" // // Names the artifact to be  ie: 'com.github.realityexpander.ScreenRoute:ScreenRoute:0.7.11'
 //                artifactId = "ScreenRoute" // // match module name for clarity
                 artifactId = project.name  // this will be "ScreenRoute"
-                version = '0.7.19'
+                version = '0.7.20'
 
 //                from(components["kotlin"]) // no worky
 //                from components.kotlin // no worky
-//                from components.java
+//                from components.java // works with library
                 from components.kotlin
             }
         }
