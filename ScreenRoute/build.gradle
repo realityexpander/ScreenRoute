@@ -15,16 +15,21 @@ java {
     withSourcesJar()
 }
 
-println("project.name= ${project.name}")
+println("Module project.name= ${project.name}")
 
 // Published at: https://jitpack.io/#realityexpander/ScreenRoute
+// 1. Push code to github
+// 2. Draft a new release
+// 3. Go to jitpack site link
+// 4. wait for build
+// 5. Add to build.gradle: implementation 'com.github.realityexpander.ScreenRoute:ScreenRoute2:0.7.22'
 
 afterEvaluate {
     publishing {
         publications {
 //            library(MavenPublication) { // works with components.java
-//            mavenKotlin(MavenPublication) { // works with components.kotlin
-            mavenJava(MavenPublication) {
+            mavenKotlin(MavenPublication) { // works with components.kotlin
+//            mavenJava(MavenPublication) { // works with components.java
                 // Names the groupId to be created ie: implementation 'com.github.realityexpander.ScreenRoute:{artifactId}:{releaseId from github}'
                 // Note this groupId can be completely different than the PACKAGE used by the module, but to be consistent should be the SAME.
                 groupId = 'com.athanas.screenroute' // match package name for clarity
@@ -33,10 +38,10 @@ afterEvaluate {
 //                artifactId = "$project.name" // // Names the artifact to be  ie: 'com.github.realityexpander.ScreenRoute:ScreenRoute:{releaseId from github}'
 //                artifactId = "ScreenRoute" // // match module name for clarity
                 artifactId = project.name  // this will be "ScreenRoute"
-                version = '0.7.21'
+                version = '0.7.22'
 
-                from components.java // works with library
-//                from components.kotlin // works with mavenKotlin(MavenPublication)
+//                from components.java // works with library
+                from components.kotlin // works with mavenKotlin(MavenPublication)
             }
         }
     }

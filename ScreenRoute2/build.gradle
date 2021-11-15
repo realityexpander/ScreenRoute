@@ -41,7 +41,12 @@ dependencies {
 }
 
 // Published at: https://jitpack.io/#realityexpander/ScreenRoute
-println("project.name= ${project.name}")
+// 1. Push code to github
+// 2. Draft a new release
+// 3. Go to jitpack site link
+// 4. wait for build
+// 5. Add to build.gradle: implementation 'com.github.realityexpander.ScreenRoute:ScreenRoute2:0.7.22'
+println("Module project.name= ${project.name}")
 
 afterEvaluate {
     publishing {
@@ -53,7 +58,7 @@ afterEvaluate {
                 // Names the artifact to be published ie: implementation 'com.github.realityexpander.ScreenRoute2:{artifactId}:{releaseId from github}'
 //                artifactId = "ScreenRoute2" // match Module maven-publish
                 artifactId = "$project.name"
-                version = '0.7.21'
+                version = '0.7.22'
 
                 from components.release
             }
