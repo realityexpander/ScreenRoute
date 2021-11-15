@@ -19,7 +19,7 @@ afterEvaluate {
                 version = '0.7.5'
 
 //                from(components["kotlin"]) // no worky
-                from components.release
+                from components.kotlin
             }
         }
     }
